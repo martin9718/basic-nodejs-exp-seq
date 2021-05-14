@@ -30,27 +30,9 @@ const User = db.define('User', {
     tableName: 'users'
 });
 
-const UserAdress = db.define('UserAdress', {
-    street: Sequelize.STRING,
-    number_street: Sequelize.STRING,
-    city: Sequelize.STRING,
-    state: Sequelize.STRING,
-    createdAt: {
-        type: Sequelize.DataTypes.DATE,
-        field: 'date_created',
-    },
-    updatedAt: {
-        type: Sequelize.DataTypes.DATE,
-        field: 'date_updated'
-    }
-
-}, {
-    tableName: 'user_address'
-});
 
 
 
 module.exports = {
-    User,
-    UserAdress
+    User
 };

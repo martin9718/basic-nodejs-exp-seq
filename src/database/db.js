@@ -10,7 +10,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 
 
 
-sequelize.sync({force:true})
+sequelize.sync({force:false})
     .then(() => {
         console.log('Database connected successfully')
     })

@@ -49,22 +49,11 @@ const registerUser = async (req, res) => {
 
     };
 
-    const userAddress = {
-        street : body.street,
-        number_street: body.number_street,
-        city: body.city,
-        state: body.state
-    }
-
     try {
         const newUser = await User.create(user);
 
-        const newUserAddress = await UserAdress.create(userAddress);
-
-        await newUser.setUserAdress(newUserAddress);
-
         return res.status(200).json({
-            message: 'User successfully registered'
+            user_id: newUser.id
         });
     } catch (error) {
         console.log(error);
