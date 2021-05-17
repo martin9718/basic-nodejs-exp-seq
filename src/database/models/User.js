@@ -30,9 +30,42 @@ const User = db.define('User', {
     tableName: 'users'
 });
 
+const UserRole = db.define('UserRole', {
+    name: Sequelize.STRING,
+    createdAt: {
+        type: Sequelize.DataTypes.DATE,
+        field: 'date_created',
+    },
+    updatedAt: {
+        type: Sequelize.DataTypes.DATE,
+        field: 'date_updated'
+    }
+
+}, {
+    tableName: 'user_roles'
+});
+
+const AccessToken = db.define('AccessToken', {
+    token: Sequelize.STRING,
+    expiry_time: Sequelize.INTEGER,
+    createdAt: {
+        type: Sequelize.DataTypes.DATE,
+        field: 'date_created',
+    },
+    updatedAt: {
+        type: Sequelize.DataTypes.DATE,
+        field: 'date_updated'
+    }
+
+}, {
+    tableName: 'access_tokens'
+});
+
 
 
 
 module.exports = {
-    User
+    User,
+    UserRole,
+    AccessToken
 };

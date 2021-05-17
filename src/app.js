@@ -30,8 +30,8 @@ app.use((req, res, next) => {
 
 
 //ROUTES
-app.use(require('./routes/User'));
-
+app.use(require('./routes/user'));
+app.use(require('./routes/auth'));
 
 //Enable public folder
 app.use(express.static(path.resolve(__dirname, 'public')));
